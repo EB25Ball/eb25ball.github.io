@@ -2,7 +2,6 @@
   height: 200rem;
   overflow-y: scroll;
 }
-
 .headerContainer {
     background-color: #060505;
     top: 0px;
@@ -21,7 +20,7 @@
     height: 18vw;
   }
   
-  .Page {
+  .page {
     float: left;
     background-color: #4f4f4f;
     top: 17vw;
@@ -36,6 +35,7 @@
     position: absolute;
     z-index: 2;
   }
+  
   .page2 {
     position: absolute;
     bottom: 0px;
@@ -107,10 +107,8 @@ a i::after{
 }
 a:hover i::after{
   width: 20px;
-  left: 80%;
-  
+  left: 80%; 
 }
-
 .GithubButton{
 position: absolute;
 left: calc(47% - 5vw);
@@ -132,7 +130,8 @@ top: calc(25% - 3vw);
 }
 .DiscordPfp{
     position: absolute;
-    left: calc(15% - 5vw);
+    margin: 0;
+    left: calc(30% - 5vw);
     top: calc(20% - 3vw);
     width: 7.5vw;
     height: 7.5vw;
@@ -142,8 +141,8 @@ top: calc(25% - 3vw);
  
   .dropdown-menu {
     position: absolute;
-    left: calc(17% - 5vw);
     top: calc(43% - 3vw);
+    left: calc(32.25% - 5vw);
     display: none;
     background-color: #2e2c2c;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
@@ -153,8 +152,8 @@ top: calc(25% - 3vw);
     z-index: -2;
   }
   .hiderolldown-background {
-    left: calc(15% - 5vw);
-    top: calc(11% - 3vw);
+    left: calc(30% - 5vw);
+    top: calc(10.5% - 3vw);
     position: absolute;
     width: 7.5vw;
     height: 8vw;
@@ -182,6 +181,15 @@ top: calc(25% - 3vw);
     align-items: center;
     justify-content: center;
 }
+.socials img {
+  filter: blur(1px);
+  transition: all 0.3s ease-in-out;
+}
+
+.socials img:hover {
+  filter: none;
+  transform: translateY(-5%) scale(1.1);
+}
 .socials b {
     display: block;
     width: 3vw;
@@ -203,7 +211,15 @@ top: calc(25% - 3vw);
   #Github {
     background-image: url(path/to/github-icon.jpg);
   }
+  #slider-container{
+    position: absolute;
+    top: 93%;
+    left:42.5%
+  }
 body {
+      min-height: 100vh;
+      overflow-x: hidden ;
+      background: linear-gradient(#2b1055, #7597de);
     margin: 0 0 0 0;
 }
 
