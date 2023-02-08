@@ -10,12 +10,12 @@
     height: 18vw;
     margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
     position: fixed;
     z-index: 1;
   }
     .LogoHeader {
+    position: fixed;
+    left: 36.5%;
     display: block; 
     margin: 0 auto; 
     height: 18vw;
@@ -113,17 +113,17 @@ a:hover i::after{
 
 .GithubButton{
 position: absolute;
-left: calc(49% - 5vw);
+left: calc(47% - 5vw);
 top: calc(25% - 3vw);
 }
 .GrabArchiveButton{
   position: absolute;
-  left: calc(49% - 5vw);
+  left: calc(47% - 5vw);
   top: calc(50% - 3vw);
   }
   .GrabButton{
     position: absolute;
-    left: calc(49% - 5vw);
+    left: calc(47% - 5vw);
     top: calc(75% - 3vw);
     }
 .discordpfp-container{
