@@ -1,58 +1,158 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css"  href="MainPageStyle.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-     <div class="scrollable-content">
-        <div class="headerContainer">
-            <img src="20230207_115139(1).gif" loop=1 class="LogoHeader">
-        </div>
-        <div class="Page">
-         <div class="discordpfp-container" href="https://discordapp.com/users/461694991467544577">
-            <div class="discordpfp-container">
-            <img src="f7b4dd6238e2719cc9a4f2d8fc2ce00e.png" class="DiscordPfp">
-            <div class="hiderolldown-background"></div>
-            <div class="dropdown-menu">
-                <img class="a"src="dc.png"style="width: 1vw; height: 1vw;">
-                <br>
-                <br>
-                <br>
-                <img class="a"src="li.png"style="width: 1vw; height: 1vw;">
-                <br>
-                <br>
-                <br>
-                <img class="a"src="tw.png"style="width: 1vw; height: 1vw;">
-              </div>    
-              </div>
-         </div>
-            <div class="socials">
-                <b href="https://www.facebook.com">
-                    <img src="Facebook-logo-blue-circle-large-transparent-png.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
-                </b>
-             
-                <b href="https://www.github.com">
-                    <img src="GithubLogo.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
-                </b>  
-                 <b href="https://www.twitch.tv">
-                    <img src="TwitchIcon.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
-                 </b>
-            </div>
-            <a href="#" style="--clr:#1e9bff" class="GithubButton">
-                <span>Button</span>
-                 <i></i> </a>  
-              <a href="#" style="--clr:#6eff3e" class="GrabArchiveButton"><span>Button</span><i></i>  </a>  
-              <a href="#" style="--clr:#ff1867" class="GrabButton"><span>Button</span><i></i>  </a>  
-              <div class="page2">
-              </div>
-     </div>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">$('.discordpfp-container').hover(function () {
+    $('.dropdown-menu').stop().slideDown();
+  }, function () {
+    $('.dropdown-menu').stop().slideUp();
+  });</script>
+  <link rel="stylesheet" type="text/css" href="MainPageStyle.css">
+  <style>
+    .custom-range {
+      width: 20vw;
+      height: 1.5vw;
+      border-radius: 15px;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .custom-range:before {
+      content: "";
+      height: 100%;
+      width: 0;
+      background-color: #2196f3;
+      transition: width 0.3s ease-out;
+    }
+
+    .custom-range-thumb {
+      height: 2vw;
+      width: 2vw;
+      background-color: #fff;
+      border-radius: 100%;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+      transition: top 0.3s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="scrollable-content">
+    <div class="headerContainer">
+      <img src="20230207_115139(1).gif" loop=1 class="LogoHeader">
     </div>
-        <script>$('.discordpfp-container').hover(function() {
-            $('.dropdown-menu').stop().slideDown();
-          }, function() {
-            $('.dropdown-menu').stop().slideUp();
-          });
-          </script>
-    </body>
+    <div class="page">
+      <div class="discordpfp-container" href="https://discordapp.com/users/461694991467544577">
+          <img src="f7b4dd6238e2719cc9a4f2d8fc2ce00e.png" class="DiscordPfp">
+          <div class="hiderolldown-background"></div>
+          <div class="dropdown-menu">
+            <img class="a" src="dc.png" style="width: 1vw; height: 1vw;">
+            <br>
+            <br>
+            <br>
+            <img class="a" src="li.png" style="width: 1vw; height: 1vw;">
+            <br>
+            <br>
+            <br>
+            <img class="a" src="tw.png" style="width: 1vw; height: 1vw;">
+        </div>
+      </div>
+      <div class="socials">
+        <b href="https://www.facebook.com">
+          <img src="Facebook-logo-blue-circle-large-transparent-png.png" class="social-icon"
+            style="width: 2.25vw; height: 2.25vw;">
+        </b>
+
+        <b href="https://www.github.com">
+          <img src="GithubLogo.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
+        </b>
+        <b href="https://www.twitch.tv">
+          <img src="TwitchIcon.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
+        </b>
+      </div>
+      <a href="#" style="--clr:#1e9bff" class="GithubButton">
+        <span>Button</span>
+        <i></i> </a>
+      <a href="#" style="--clr:#6eff3e" class="GrabArchiveButton"><span>Button</span><i></i> </a>
+      <a href="#" style="--clr:#ff1867" class="GrabButton"><span>Button</span><i></i> </a>
+      <div id="slider-container">
+        <div class="custom-range" id="customRange">
+          <div class="custom-range-thumb" id="customRangeThumb"></div>
+        </div>
+      </div>
+      <div class="page2">
+      </div>
+    </div>
+  </div>
+  <script>
+
+    const customRange = document.getElementsByClassName("custom-range");
+    const customRangeID = document.getElementById("customRange");
+    const customRangeThumb = document.getElementById("customRangeThumb");
+    const page = document.getElementsByClassName("page")[0];
+    const drophiderbox = document.getElementsByClassName("hiderolldown-background")[0];
+    let isDragging = false;
+    let currentX;
+    let initialX;
+    let xOffset = 0;
+
+    customRangeThumb.addEventListener("mousedown", function (e) {
+      isDragging = true;
+      initialX = e.clientX - xOffset;
+      console.log("initialX = " + e.clientX - xOffset);
+    });
+    var currentValue = (currentX / customRangeID.offsetWidth) * 100;
+    document.addEventListener("mouseup", function () {
+      isDragging = false;
+    });
+
+    customRange[0].addEventListener("mousemove", function (e) {
+      if (isDragging) {
+        currentX = e.clientX - initialX;
+        console.log(currentX, "Customrange clientX = " + e.clientX, "inital =" + initialX);
+        xOffset = currentX;
+        customRangeThumb.style.left = currentX + "px";
+        $('.custom-range::before').css('width', customRangeThumb.offsetLeft + 'px');
+        currentValue = (currentX / customRangeID.offsetWidth) * 100;
+        drophiderbox.style.backgroundColor = `rgb(${currentValue}, ${currentValue}, ${currentValue})`;
+        page.style.backgroundColor = `rgb(${currentValue}, ${currentValue}, ${currentValue})`;
+      }
+    });
+
+   
+    customRange[0].addEventListener("mouseleave", function () {
+      customRangeThumb.style.top = "0";
+    });
+    const thumb = document.querySelector('.custom-range-thumb');
+    const rangDisplay = document.querySelector('.custom-range');
+
+    thumb.addEventListener('mousedown', function () {
+      document.addEventListener('mousemove', handleMouseMove);
+    });
+    document.addEventListener('mouseup', function () {
+      document.removeEventListener('mousemove', handleMouseMove);
+    });
+
+    function handleMouseMove(e) {
+      const thumbRect = thumb.getBoundingClientRect();
+      const displayRect = rangDisplay.getBoundingClientRect();
+      if (thumbRect.right >= displayRect.left && thumbRect.left <= displayRect.right) {
+        rangDisplay.style.overflow = "hidden";
+      } else {
+        rangDisplay.style.overflow = "visible";
+      }
+    }
+    window.onload = function () {
+      console.log("it loaded");
+      rangDisplay.style.overflow = "hidden";
+    }
+
+  </script>
+</body>
+
 </html>
