@@ -1,8 +1,0 @@
-border around the dropdown menu and pfp when hovered.
-When images are hovered over increase size a little and have a small hue around it (maybe).
-Animate the page to have a good start
-  - i.e) buttons come in from left to right 0.5 second interval from each other. Icons have animations on start, etc
-Add a parallax effect
-Moon
-idk loki forgot 
-  
