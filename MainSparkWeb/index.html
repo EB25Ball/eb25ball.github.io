@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 <head>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">$('.discordpfp-container').hover(function () {
-    $('.dropdown-menu').stop().slideDown();
-  }, function () {
-    $('.dropdown-menu').stop().slideUp();
-  });</script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous">$('.discordpfp-container').hover(function () {
+      $('.dropdown-menu').stop().slideDown();
+    }, function () {
+      $('.dropdown-menu').stop().slideUp();
+    });</script>
   <link rel="stylesheet" type="text/css" href="MainPageStyle.css">
   <style>
     .custom-range {
       width: 20vw;
       height: 1.5vw;
-      border-radius: 15px;
+      border-radius: 2vw;
       background-color: #ddd;
       display: flex;
       align-items: center;
@@ -39,43 +43,70 @@
       box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
       transition: top 0.3s ease-out;
     }
+  .dropdown-menu{
+    position: absolute;
+    top: 92.5%;
+    left: 36.75%;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 2vw;
+    height: 0; background-color: #2e2c2c; z-index: -2;
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    transition: height 2s;
+  }
+    .dropdown-menu .nav_img{width: 75%;
+      margin: 0.75vw 0;
+    background:none;
+  } 
+
+     /* .nav_img:hover {
+        background: rgba(170,170,170, 0.062);
+        transition: 0.5s;
+      }*/
   </style>
 </head>
+
 <body>
   <div class="scrollable-content">
-    <div class="headerContainer">
+    <!-- <div class="headerContainer">
       <img src="20230207_115139(1).gif" loop=1 class="LogoHeader">
-    </div>
+    </div>-->
+    <section>
+      <img src="BannerImages/stars.png" id="stars" alt="stars">
+      <img src="BannerImages/moon.png" id="moon" alt="moon" mix-blend-mode="screen">
+      <img src="BannerImages/mountains_behind.png" id="mountains_behind" alt="mountains_behind">
+      <h2 id="text">EBSpark</h2>
+      <img src="BannerImages/mountains_front.png" id="mountains_front" alt="mountains_front">
+    </section>
     <div class="page">
       <div class="discordpfp-container" href="https://discordapp.com/users/461694991467544577">
-          <img src="f7b4dd6238e2719cc9a4f2d8fc2ce00e.png" class="DiscordPfp">
-          <div class="hiderolldown-background"></div>
-          <div class="dropdown-menu">
-            <img class="a" src="dc.png" style="width: 1vw; height: 1vw;">
-            <br>
-            <br>
-            <br>
-            <img class="a" src="li.png" style="width: 1vw; height: 1vw;">
-            <br>
-            <br>
-            <br>
-            <img class="a" src="tw.png" style="width: 1vw; height: 1vw;">
+        <img src="images/f7b4dd6238e2719cc9a4f2d8fc2ce00e.png" class="DiscordPfp">
+        <div class="dropdown-menu">
+          <img class="nav_img" src="images/dc.png">
+          <img class="nav_img" src="images/li.png">
+          <img class="nav_img" src="images/tw.png">
         </div>
+        
       </div>
+      
       <div class="socials">
         <b href="https://www.facebook.com">
-          <img src="Facebook-logo-blue-circle-large-transparent-png.png" class="social-icon"
+          <img src="images/Facebook-logo-blue-circle-large-transparent-png.png" class="social-icon"
             style="width: 2.25vw; height: 2.25vw;">
         </b>
 
         <b href="https://www.github.com">
-          <img src="GithubLogo.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
+          <img src="images/GithubLogo.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
         </b>
         <b href="https://www.twitch.tv">
-          <img src="TwitchIcon.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
+          <img src="images/TwitchIcon.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
         </b>
       </div>
-      <a href="#" style="--clr:#1e9bff" class="GithubButton">
+      <a href="#" style="--clr:#1e9bff" class="TiktokButton">
         <span>Button</span>
         <i></i> </a>
       <a href="#" style="--clr:#6eff3e" class="GrabArchiveButton"><span>Button</span><i></i> </a>
@@ -90,12 +121,19 @@
     </div>
   </div>
   <script>
-
+    const Discordpfp_container = document.querySelector(".discordpfp-container");
+    const dropdown_menu = document.querySelector(".dropdown-menu");
     const customRange = document.getElementsByClassName("custom-range");
     const customRangeID = document.getElementById("customRange");
     const customRangeThumb = document.getElementById("customRangeThumb");
     const page = document.getElementsByClassName("page")[0];
-    const drophiderbox = document.getElementsByClassName("hiderolldown-background")[0];
+    Discordpfp_container.addEventListener("mouseover", function() {
+      dropdown_menu.style.height = "10vw";
+    });
+
+    Discordpfp_container.addEventListener("mouseout", function() {
+      dropdown_menu.style.height = "0";
+    });
     let isDragging = false;
     let currentX;
     let initialX;
@@ -119,12 +157,11 @@
         customRangeThumb.style.left = currentX + "px";
         $('.custom-range::before').css('width', customRangeThumb.offsetLeft + 'px');
         currentValue = (currentX / customRangeID.offsetWidth) * 100;
-        drophiderbox.style.backgroundColor = `rgb(${currentValue}, ${currentValue}, ${currentValue})`;
         page.style.backgroundColor = `rgb(${currentValue}, ${currentValue}, ${currentValue})`;
       }
     });
 
-   
+
     customRange[0].addEventListener("mouseleave", function () {
       customRangeThumb.style.top = "0";
     });
@@ -153,6 +190,7 @@
     }
 
   </script>
+  <script src="Banner.js"></script>
 </body>
 
 </html>
