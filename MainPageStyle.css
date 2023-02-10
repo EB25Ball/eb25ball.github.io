@@ -164,7 +164,6 @@ section img#mountains_front
 .switch input:checked[type="checkbox"]::before {
   left: 55px;/*note to self, this controls the distance in the switch for it to move*/
 }
-  
   .page2 {
     position: absolute;
     bottom: 0px;
@@ -181,16 +180,17 @@ background-color: #060505;
  }
 a{
   position: relative;
+  display: inline-block;
   background: #fff;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: auto;
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 2vw 7vw;
   transition: 0.5s;
 }
+
 a:hover{
   background: var(--clr);
   color: var(--clr);
@@ -208,6 +208,22 @@ a span{
   position: relative;
   z-index: 2;
 
+} a.TiktokButton{
+  padding: 2vw 7vw;
+  font-size: 1.5vw;
+}
+
+a.GrabArchiveButton{
+  padding: 2vw 4.9vw;
+  display: inline;
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-weight: 100;
+}
+a.GrabButton{
+  padding: 2vw 7.625vw;
+  display: inline;
+  font-size:1.5vw;
 }
 a i {
   position: absolute;
