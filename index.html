@@ -14,19 +14,12 @@
       position: fixed;
       top: 13vw;
       width: 100vw;
-      height: 50vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 100vw;
+      background-repeat: no-repeat;
       z-index: 0;
+      background-image: url("images/ex-background2.jpg");
+      background-size: contain;
     }
-    exterior-background img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-  }
 #moon-hit{
   position: absolute;
   height: 500px;
@@ -200,9 +193,9 @@
       <div class="discordpfp-container" href="https://discordapp.com/users/461694991467544577">
         <img src="images/f7b4dd6238e2719cc9a4f2d8fc2ce00e.png" class="DiscordPfp">
         <div class="dropdown-menu">
-          <img class="nav_img" src="images/dc.png">
-          <img class="nav_img" src="images/li.png">
-          <img class="nav_img" src="images/tw.png">
+          <img href="https://discordapp.com/users/461694991467544577" class="nav_img" src="images/dc.png">
+          <img href="https://twitter.com/spark_eb" class="nav_img" src="images/tw.png">
+          <img  href="" class="nav_img" src="images/yt.png">
         </div>
       </div>
       <div class="page-overlays">
@@ -219,10 +212,10 @@
             style="width: 2.25vw; height: 2.25vw;">
         </b>
 
-        <b href="https://www.github.com">
+        <b href="https://github.com/EB25Ball?tab=repositories">
           <img src="images/GithubLogo.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
         </b>
-        <b href="https://www.twitch.tv">
+        <b href="https://www.twitch.tv/oebspark">
           <img src="images/TwitchIcon.png" class="social-icon" style="width: 2.25vw; height: 2.25vw;">
         </b>
       </div>
@@ -230,11 +223,12 @@
         <input type="checkbox" id="toggle-background">
       </div>
       <div class="mainButtons">
-        <a href="#" style="--clr:#1e9bff" class="TiktokButton">
-          <span>Button</span>
-          <i></i> </a>
-        <a href="#" style="--clr:#6eff3e" class="GrabArchiveButton"><span>Button</span><i></i> </a>
-        <a href="#" style="--clr:#ff1867" class="GrabButton"><span>Button</span><i></i> </a>
+
+        <a href="https://www.tiktok.com/@eb.gaming_" style="--clr:#1e9bff; position:absolute;z-index:10;" class="TiktokButton">
+           <span class="Tiktok-text">Tiktok</span>
+          <i></i> </a>   
+        <a href="#" style="--clr:#6eff3e" class="GrabArchiveButton"><span class="Grab-A-text">Grab~Arch</span><i></i> </a>
+        <a href="https://grabvr.quest/" style="--clr:#ff1867" class="GrabButton"><span class="Grab-text">GRAB</span><i></i> </a>
         <div id="slider-container">
           <div class="custom-range" id="customRange">
             <div class="custom-range-thumb" id="customRangeThumb"></div>
@@ -244,8 +238,7 @@
       <div class="page2">
       </div>
     </div>
-    <exterior-background>
-      <img src="images/ExBackground.png" id="ex-background"alt="ex-background">
+    <exterior-background id="ex-background">
     </exterior-background>
   </div>
   <script>
@@ -353,7 +346,7 @@ mega4.play();
         page.style.backgroundImage = "url('images/rickA.gif')";
         DiscordPfp.src = "images/rickA.gif";
         body.style.backgroundImage = "url('images/rickA.gif')";
-        ExBackground.src = "images/rickA.gif";
+        ExBackground.style.backgroundImage = "url('images/rickA.gif')";
         backcustomRange.style.backgroundImage = "url('images/rickA.gif')";
         customRangeThumb.style.backgroundImage = "url('images/rickA.gif')";
         var images = document.getElementsByTagName('img'); 
