@@ -27,7 +27,14 @@
       pointer-events: none;
       z-index: 1;
   }
-
+#moon-hit{
+  position: absolute;
+  height: 500px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+}
     .custom-range {
       width: 21vw;
       height: 1.5vw;
@@ -92,21 +99,58 @@
         position:absolute;
         top:18.75%;
         left:65%;
+        animation: BlackholeAnimate 1s ease-out forwards;
+      }
+      .blackholehover{
         width: 25vw; 
         height: 17vw;
-        animation: BlackholeAnimate 3s ease-out forwards;
+        animation-name: sticker-hover-exit;
+         animation-duration: 0.7s;
+      }
+      .blackholehover:hover{
+        animation-name: sticker-animation-hover;
+        animation-duration: 1.4s;
+        animation-fill-mode: forwards;
       }
         .earth {
           position: absolute;
           top: 50%;
           left: 5%;
-          width: 20.0vw;
+          border-radius: 100%;
+          background-color: transparent;
+          opacity: 0;
+          animation: EarthAnimate 1s ease-out forwards;
+          transition: all 0.5s ease-in-out;
+        }
+        
+        .earthhover:hover {
+          animation-name: sticker-animation-hover;
+          animation-duration: 1.4s;
+          animation-fill-mode: forwards;
+}
+        .earthhover{         
+           width: 20.0vw;
           height: 20vw;
           border-radius: 100%;
-          opacity: 0;
-          animation: EarthAnimate 3s ease-out forwards;
+         animation-name: sticker-hover-exit;
+          animation-duration: 0.7s;
         }
-      
+@keyframes sticker-animation-hover {
+  from {
+    transform: translateY(0%) scale(1);
+  }
+  to {
+   transform:  translateY(-10%) scale(1.1);
+  }
+}
+@keyframes sticker-hover-exit{
+  from {
+    transform: translateY(-10%) scale(1.1);
+  }
+  to {
+   transform:  translateY(0%) scale(1);
+  }
+}
         @keyframes EarthAnimate {
           0% {
             top: 50%;
@@ -136,13 +180,22 @@
     <!-- <div class="headerContainer">
       <img src="20230207_115139(1).gif" loop=1 class="LogoHeader">
     </div>-->
-    <section>
+    <section class="header">
       <img src="BannerImages/stars.png" id="stars" alt="stars">
+      <div id="moon-hit" onclick="var audio = document.getElementById('audio');
+      audio.play();">
       <img src="BannerImages/moon.png" id="moon" alt="moon" mix-blend-mode="screen">
+    </div>
       <img src="BannerImages/mountains_behind.png" id="mountains_behind" alt="mountains_behind">
       <h2 id="text">EBSpark</h2>
       <img src="BannerImages/mountains_front.png" id="mountains_front" alt="mountains_front">
     </section>
+    <audio id="audio" src="audios/Undertale - Megalovania.mp3"></audio>
+    <audio id="Mega1" src="audios/the first note of megalovania.mp3"></audio>
+    <audio id="Mega2" src="audios/second note of megalovania.mp3"></audio>
+    <audio id="Mega3" src="audios/megaNote3.mp3"></audio>
+    <audio id="Mega4" src="audios/megaNote4.mp3"></audio>
+    <audio id="Rolling" src="audios/RickR.mp3"></audio>
     <div class="page">
       <div class="discordpfp-container" href="https://discordapp.com/users/461694991467544577">
         <img src="images/f7b4dd6238e2719cc9a4f2d8fc2ce00e.png" class="DiscordPfp">
@@ -153,8 +206,12 @@
         </div>
       </div>
       <div class="page-overlays">
-        <img class="earth" src="images/Earth.png">
-        <img class="blackhole" src="images/Picsart_23-02-09_16-02-36-900.png">
+        <div class="earth">
+        <img class="earthhover" src="images/Earth.png">
+      </div>
+      <div class="blackhole">
+        <img class="blackholehover" src="images/Picsart_23-02-09_16-02-36-900.png">
+      </div>
       </div>
       <div class="socials">
         <b href="https://www.facebook.com">
@@ -198,7 +255,6 @@
     const customRangeID = document.getElementById("customRange");
     const customRangeThumb = document.getElementById("customRangeThumb");
     const page = document.querySelector(".page");
-    const outer = document.querySelector(".cursor-outer");
     const toggleBackground = document.getElementById("toggle-background");
     toggleBackground.addEventListener("change", function () {
       if (toggleBackground.checked) {
@@ -268,7 +324,46 @@
       console.log("it loaded");
       rangDisplay.style.overflow = "hidden";
     }
-
+    const mega1 = document.getElementById('Mega1');
+    const mega2 = document.getElementById('Mega2');
+    const mega3 = document.getElementById('Mega3');
+    const mega4 = document.getElementById('Mega4');
+    const rick = document.getElementById('Rolling');
+   const DiscordPfp = document.querySelector(".DiscordPfp");
+  const body= document.getElementsByTagName("body")[0];
+  const ExBackground = document.getElementById("ex-background")
+  const backcustomRange = document.getElementById("customRange");
+    document.addEventListener('keydown', function(event) {
+      const key = event.key.toLocaleLowerCase(); // "a", "1", "Shift", etc.
+      console.log(key);
+      if (key == "z"){
+        mega1.play();
+      }
+      if (key == "x"){
+mega2.play();
+      }
+      if (key == "c"){
+mega3.play();
+      }
+      if(key == "v"){
+mega4.play();
+      }
+      if(key == "r"){
+        rick.play();
+        page.style.backgroundImage = "url('images/rickA.gif')";
+        DiscordPfp.src = "images/rickA.gif";
+        body.style.backgroundImage = "url('images/rickA.gif')";
+        ExBackground.src = "images/rickA.gif";
+        backcustomRange.style.backgroundImage = "url('images/rickA.gif')";
+        customRangeThumb.style.backgroundImage = "url('images/rickA.gif')";
+        var images = document.getElementsByTagName('img'); 
+var srcList = [];
+for(var i = 0; i < images.length; i++) {
+    srcList.push(images[i].src);
+    images[i].src = "images/rickA.gif";
+}
+              }
+  });
   </script>
   <script src="Banner.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js">new kursor({
